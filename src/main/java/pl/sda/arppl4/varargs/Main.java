@@ -6,5 +6,9 @@ public class Main {
 
         logBook.addStudents("Pawel", "Gawel", "Zawel", "Uawel", "Kawel", "Bawel");
 
+//
+//        String zmienna = "ala ma kota ale kot lubi ale";
+//        zmienna = zmienna.substring(5,11);
+//        System.out.println(zmienna); // "ala ma kota ale kot lubi ale"
     }
 }

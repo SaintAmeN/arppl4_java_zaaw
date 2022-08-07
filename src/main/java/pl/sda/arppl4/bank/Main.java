@@ -15,7 +15,7 @@ public class Main {
         }
 
         Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNext()){
+        while (true){
             String word = scanner.nextLine();
             // ignorujemy word, bo chcemy tylko mieć możliwość
             // sprawdzenia stanu konta po kliknięciu enter.

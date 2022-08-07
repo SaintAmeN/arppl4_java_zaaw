@@ -27,23 +27,33 @@ public class BankAccount {
     // lock, mutex, synchronizer, semaphore
 
 
-    //    private final Object lock = new Object();
-//    public void transferIn(double amount) {
-//        synchronized (lock) {
-//            this.state = this.state + amount;
-//        }
-//    }
-//
-//    public void transferOut(double amount) {
-//        synchronized (lock) {
-//            this.state = this.state - amount;
-//        }
-//    }
-    public synchronized void transferIn(double amount) {
-        this.state = this.state + amount;
+    private final Object lock = new Object();
+
+    public void transferIn(double amount) {
+        System.out.println("Jestem przed lockiem");
+        synchronized (lock) {
+            System.out.println("Uzyskałem lock");
+            this.state = this.state + amount;
+            System.out.println("Opuszczam lock");
+        }
+        System.out.println("Zwolniłem lock");
     }
 
-    public synchronized void transferOut(double amount) {
-        this.state = this.state - amount;
+    public void transferOut(double amount) {
+        System.out.println("Jestem przed lockiem");
+        synchronized (lock) {
+            System.out.println("Uzyskałem lock");
+            this.state = this.state - amount;
+            System.out.println("Opuszczam lock");
+        }
+        System.out.println("Zwolniłem lock");
     }
+
+//    public synchronized void transferIn(double amount) {
+//        this.state = this.state + amount;
+//    }
+//
+//    public synchronized void transferOut(double amount) {
+//        this.state = this.state - amount;
+//    }
 }
